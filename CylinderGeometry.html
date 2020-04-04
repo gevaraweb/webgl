@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - геометрические фигуры</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="https://threejs.org/examples/main.css">
+	</head>
+	<body>
+		<div id="info">
+			Трехмерные фигуры
+		</div>
+
+		<script type="module">
+
+			import * as THREE from 'https://threejs.org/build/three.module.js';
+
+			import { OrbitControls } from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
+
+			var camera, scene, renderer;
+			var controls;
+			var ambientLight, light;
+			init();
+			animate();
+
+			function init() {
+
+				var container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				// CAMERA
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 80000 );
+				camera.position.set( 600, 300, 1100 );
+
+				// LIGHTS
+				ambientLight = new THREE.AmbientLight( 0x333333 );	// 0.2
+
+				light = new THREE.DirectionalLight( 0xFFFFFF, 1.0 );
+				light.position.set( 1, 1, 1 );				
+				// direction is set in GUI
+
+				// RENDERER
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+
+				// EVENTS
+				window.addEventListener( 'resize', onWindowResize, false );
+
+				// CONTROLS
+				controls = new OrbitControls( camera, renderer.domElement );
+				controls.addEventListener( 'change', render );
+				//controls.rotateSpeed = 1; 
+				controls.enableZoom = true;  
+				controls.zoomSpeed = 0.5;  
+
+				controls.minDistance = 500;
+				controls.maxDistance = 2500;
+				
+				controls.enableDamping = true;
+
+				// scene itself
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color( 0xD3D3D3 );
+
+				scene.add( ambientLight );
+				scene.add( light );
+			
+
+				// scene objects
+				
+				
+				var radiusTop = 0; 
+				var radiusBottom = 128;
+				var heigth = 240; 
+				var segments = 3;
+				var geometry = new THREE.CylinderGeometry( radiusTop, radiusBottom, heigth, segments );
+				var material = new THREE.MeshPhongMaterial( { color: 0xc41e3a } );
+				var piramida = new THREE.Mesh( geometry, material );
+				piramida.position.set( -600, 0, 0 );
+
+				scene.add( piramida );
+
+				
+				var radiusTop = 128; 
+				var radiusBottom = 128;
+				var heigth = 240; 
+				var segments = 3;
+				var geometry = new THREE.CylinderGeometry( radiusTop, radiusBottom, heigth, segments );
+				var material = new THREE.MeshPhongMaterial( { color: 0x328aa4 } );
+				var piramida = new THREE.Mesh( geometry, material );
+				piramida.position.set( -300, 0, 0 );
+
+				scene.add( piramida );
+
+				
+				var radiusTop = 128; 
+				var radiusBottom = 128;
+				var heigth = 240; 
+				var segments = 16;
+				var geometry = new THREE.CylinderGeometry( radiusTop, radiusBottom, heigth, segments );
+				var material = new THREE.MeshPhongMaterial( { color: 0xD16220 } );
+				var piramida = new THREE.Mesh( geometry, material );
+				piramida.position.set( 0, 0, 0 );
+
+				scene.add( piramida );
+
+				
+				var radiusTop = 0;
+				var radiusBottom = 128;
+				var heigth = 240;
+				var segments = 16;
+				var geometry = new THREE.CylinderGeometry( radiusTop, radiusBottom, heigth, segments );
+				var material = new THREE.MeshPhongMaterial( { color: 0x177245 } );
+				var piramida = new THREE.Mesh( geometry, material );
+				piramida.position.set( 300, 0, 0 );
+
+				scene.add( piramida );				
+				
+				
+				var radiusTop = 64;
+				var radiusBottom = 128;
+				var heigth = 240;
+				var segments = 16;
+				var geometry = new THREE.CylinderGeometry( radiusTop, radiusBottom, heigth, segments );
+				var material = new THREE.MeshPhongMaterial( { color: 0x9A187A } );
+				var piramida = new THREE.Mesh( geometry, material );
+				piramida.position.set( 600, 0, 0 );
+
+				scene.add( piramida );	
+				
+			}
+
+			// EVENT HANDLERS
+
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			//
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				controls.update();
+				render();
+
+			}
+
+			function render() {
+
+				renderer.render( scene, camera );
+
+			}			
+
+
+		</script>
+
+	</body>
+</html>
