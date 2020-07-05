@@ -30,7 +30,7 @@
 
 				// CAMERA
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 80000 );
-				camera.position.set( 0, 0, 1200 );
+				camera.position.set( 0, 600, 1200 );
 
 				// LIGHTS
 				ambientLight = new THREE.AmbientLight( 0x333333 );	// 0.2
@@ -89,7 +89,7 @@
 				];
         
 				var Cube = new THREE.Mesh( geometry, materials );
-				Cube.rotation.y = - Math.PI / 6;
+				Cube.rotation.y = Math.PI / 6;
 				scene.add( Cube );
 
 
