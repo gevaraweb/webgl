@@ -73,25 +73,24 @@
 				var geometry = new THREE.BoxGeometry ( 300, 200, 150 );
 				var material = new THREE.MeshPhongMaterial( { color: 0xc41e3a } );	
         
-       var materials = [
-            new THREE.MeshBasicMaterial( { color: 0xFF0000 } ), 
-            // правая сторона красная
-            new THREE.MeshBasicMaterial( { color: 0x00FF00 } ),
-            // левая сторона зеленая
-            new THREE.MeshBasicMaterial( { color: 0x0000FF } ),
-            //верх синий
-            new THREE.MeshBasicMaterial( { color: 0xFF00FF } ),
-            // низ пурпурный
-            new THREE.MeshBasicMaterial( { color: 0xFFFF00 } ),
-            // лицевая сторона желтая
-            new THREE.MeshBasicMaterial( { color: 0x00FFFF } )
-            // задняя сторона цвета циан
-         ];
+			    var materials = [
+					new THREE.MeshPhongMaterial( { color: 0xFF0000 } ), 
+					// правая сторона красная
+					new THREE.MeshPhongMaterial( { color: 0x00FF00 } ),
+					// левая сторона зеленая
+					new THREE.MeshPhongMaterial( { color: 0x0000FF } ),
+					//верх синий
+					new THREE.MeshPhongMaterial( { color: 0xFF00FF } ),
+					// низ пурпурный
+					new THREE.MeshPhongMaterial( { color: 0xFFFF00 } ),
+					// лицевая сторона желтая
+					new THREE.MeshPhongMaterial( { color: 0x00FFFF } )
+					// задняя сторона цвета циан
+				];
 
         
         
 				var Cube = new THREE.Mesh( geometry, materials );
-				Cube.rotation.y = Math.PI / 6;
 				scene.add( Cube );
 
 
