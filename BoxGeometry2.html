@@ -87,10 +87,9 @@
 					new THREE.MeshPhongMaterial( { color: 0x00FFFF } )
 					// задняя сторона цвета циан
 				];
-
-        
         
 				var Cube = new THREE.Mesh( geometry, materials );
+				Cube.rotation.y = - Math.PI / 6;
 				scene.add( Cube );
 
 
