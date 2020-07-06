@@ -77,19 +77,17 @@
 					font = response;
 
 					var text = "СНЕГ";
-						var text_geometry = new THREE.TextGeometry( text, 
-									{
-										size: 24,
-										height: 5,
-										curveSegments: 4,
-										font: font,
-										style: "normal",
-										bevelEnabled: true,
-										bevelThickness: 2, 
-										bevelSize: 1, 
-									});
-
-					text_geometry = new THREE.BufferGeometry().fromGeometry( text_geometry );	
+					var text_geometry = new THREE.TextGeometry( text, 
+							{
+								size: 24,
+								height: 5,
+								curveSegments: 4,
+								font: font,
+								style: "normal",
+								bevelEnabled: true,
+								bevelThickness: 2, 
+								bevelSize: 1, 
+							});
 
 					var textureLoader = new THREE.TextureLoader();
 					var texture = textureLoader.load( 'textures/sneg.jpg' );
