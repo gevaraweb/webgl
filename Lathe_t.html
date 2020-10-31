@@ -72,7 +72,8 @@
 				texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 				
 				var material = new THREE.MeshPhongMaterial( { 
-				      map: texture, 
+				      map: texture,
+				      bumpMap: texture,					
 				      shininess: 3,
 				      side: THREE.DoubleSide
 				} );
