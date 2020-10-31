@@ -67,13 +67,14 @@
 				scene.add( ambientLight );
 				scene.add( light );
 					
-          
-        var texture = textureLoader.load( 'textures/glina.jpg' );
+				var textureLoader = new THREE.TextureLoader();
+				var texture = textureLoader.load( 'textures/glina.jpg' );
 				texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+				
 				var material = new THREE.MeshPhongMaterial( { 
-              map: texture, 
-              shininess: 3,
-              side: THREE.DoubleSide
+				      map: texture, 
+				      shininess: 3,
+				      side: THREE.DoubleSide
 				} );
 						
 				var points = [ ];
