@@ -27,6 +27,7 @@
 
 			import * as THREE from 'three';
 			import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+			import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 			import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
 			var camera, scene, renderer;
@@ -83,7 +84,7 @@
 			
 
 				// scene objects
-				var loader = new THREE.FontLoader();
+				var loader = new FontLoader();
 				loader.load( 'fonts/Arial_Regular.json', function ( response ) {
 
 					font = response;
