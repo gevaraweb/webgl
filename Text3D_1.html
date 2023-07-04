@@ -27,6 +27,7 @@
 
 			import * as THREE from 'three';
 			import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+			import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
 			var camera, scene, renderer;
 			var controls;
@@ -88,7 +89,7 @@
 					font = response;
 
 					var text = "СНЕГ";
-					var text_geometry = new THREE.TextGeometry( text, 
+					var text_geometry = new TextGeometry( text, 
 							{
 								size: 24,
 								height: 5,
